@@ -47,34 +47,40 @@ void rotateHDrive(double leftSpeed, double rightSpeed)
 void assignDriveVectorCoords(double xCoord, double yCoord)
 {
     //theta angle of vector coords
-    double theta = acos(xCoord / (pow(xCoord, double(2.0)) + pow(yCoord, double(2.0))));
+    double theta = atan(abs(yCoord / xCoord));
     if (xCoord >= 0 && yCoord <= 0)
     {
-        theta = theta + M_PI;
+        theta = 2 * M_PI - theta;
     }
     else if (xCoord <= 0 && yCoord <= 0)
     {
-        theta = theta + (M_PI / double(2.0));
+        theta = M_PI + theta;
+    }
+    else if (xCoord <= 0 && yCoord >= 0)
+    {
+        theta = M_PI - theta;
     }
 
-    if (theta >= (M_PI / 2) && theta <= 3 * (M_PI / 2))
+    cout << theta << endl;
+
+    if (theta >= (M_PI / 4) && theta <= 3 * (M_PI / 4))
     {
-        //move forward callback
+        cout << "Forward";
         moveForward(abs(xCoord));
     }
-    else if (theta > 3 * (M_PI / 2) && theta < 5 * (M_PI / 2))
+    else if (theta > 3 * (M_PI / 4) && theta < 5 * (M_PI / 4))
     {
-        //move left callback
+        cout << "Left";
         moveLeft(abs(yCoord));
     }
-    else if (theta >= 5 * (M_PI / 2) && theta <= 7 * (M_PI / 2))
+    else if (theta >= 5 * (M_PI / 4) && theta <= 7 * (M_PI / 4))
     {
-        //move backward callback
+        cout << "Backward";
         moveBackward(abs(xCoord));
     }
     else
     {
-        //move right callback
+        cout << "Right";
         moveRight(abs(yCoord));
     }
 }
@@ -85,4 +91,13 @@ int main()
     cout << "Current Degrees: " + to_string(currentDegreesDrive) + "\nTURNING LEFT AT 0.2341 SPEED + TURNING RIGHT AT 0.765 SPEED\n";
     rotateHDrive(0.2341, 0.765);
     cout << "Now at: " + to_string(currentDegreesDrive);
+
+    cout << "\n";
+
+    double testerXCoord = -0.235;
+    double testerYCoord = sqrt(1.0) / 2;
+
+    cout << testerYCoord << endl;
+
+    assignDriveVectorCoords(testerXCoord, testerYCoord);
 }
