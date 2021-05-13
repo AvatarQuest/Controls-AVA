@@ -1,6 +1,6 @@
-## Controls AVA
+# Controls AVA
 
-# Xbox Controls
+## Xbox Controls
 - Sticks
   -  Left Stick: Controlling H-Drive
   -  Right Stick: Controlling Arm
@@ -17,7 +17,7 @@
     -  Y Button: Increase Volume
     -  A Button: Decrease Volume
 -  D Pad
-  -  D Pad Up: Move Arm Down
+  -  D Pad Up: Move Arm Up
   -  D Pad Down: Move Arm Down
   -  D Pad Left: Rotate H-Drive Left
   -  D Pad Right: Rotate H-Drive Right
