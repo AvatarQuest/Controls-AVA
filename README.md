@@ -9,8 +9,8 @@
     -  Forward
     -  Back
 -  Bumpers / Buttons
-  -  Right Bumper: Close Claw
-  -  Left Bumper: Open Claw
+  -  Right Bumper: Open Claw
+  -  Left Bumper: Close Claw
 -  X, Y, A, B Button
   -  B Button: Emergency Kill Switch
   -  Volume:
@@ -19,8 +19,11 @@
 -  D Pad
   -  D Pad Up: Move Arm Up
   -  D Pad Down: Move Arm Down
-  -  D Pad Left: Rotate H-Drive Left
-  -  D Pad Right: Rotate H-Drive Right
+  -  D Pad Left: Rotate Camera Left
+  -  D Pad Right: Rotate Camera Right
+-  Triggers
+  -  Left Trigger: Rotate H-Drive Left
+  -  Right Trigger: Rotate H-Drive Right
 -  Rumble:
   -  If the bot isn't moving but controls want to move assume obstacle!
   -  If bot has reached an obstacle tell the operator using a rumble/vibration feature!
